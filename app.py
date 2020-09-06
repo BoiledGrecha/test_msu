@@ -13,14 +13,14 @@ db = SQLAlchemy(app)
 csrf = CSRFProtect(app)
 
 def check_login(login):
-    
+    """ Check login's validity """
     if len(login) > 20 or len(login) < 5:
         return "Логин не может содержать меньше 5 и больше 20 символов"
 
     return False
 
 def check_name(full_name):
-    
+    """ Check full name's validity """
     if len(full_name) > 150:
         return "ФИО не может быть длиннее 150 символов"
 
@@ -33,7 +33,7 @@ def check_name(full_name):
     return False
 
 def check_password(password): 
-    
+    """ Check password's validity """
     if len(password) < 5 or len(password) > 50: 
         return "Длина пароля должна быть не меньше 5 символов но и не больше 50."
 
@@ -62,7 +62,7 @@ def check_password(password):
 
 @app.route("/")
 def first():
-    # проверка на куки и редирект и сделать отдельную страничку убийцу куки
+
     login = request.cookies.get("login")
     password = request.cookies.get("password")
     result = make_response(render_template("start.html"))
