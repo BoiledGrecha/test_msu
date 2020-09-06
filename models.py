@@ -13,5 +13,12 @@ class User(db.Model):
     login = db.Column(db.String)
     password = db.Column(db.String)
     
+# Clear db
+
+# User.query.delete()
+# db.session.commit()
+
+
+# Initialize db
 
 # db.create_all()

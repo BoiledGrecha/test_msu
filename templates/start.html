@@ -22,8 +22,8 @@
 	
 	<form method="post" action='/signin' id="auth_form">
 		<input type="hidden" name="csrf_token" id="csrf_token" value="{{ csrf_token() }}"/>
-		<input type="hidden" name="login" id="r_login">
-		<input type="hidden"name="password" id="r_password">
+		<input type="hidden" name="login" id="r_login" required="required">
+		<input type="hidden"name="password" id="r_password" required="required">
 	</form>
 	
 	<input onclick="RegistrationForm()" type="button" value="Регистрация" id="show_reg">
